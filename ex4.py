@@ -1,3 +1,6 @@
+from ex1 import val_max
+import matplotlib.pyplot as plt
+
 def histo(liste:list) -> list:
     """
     Fonction qui a partir d'une liste de valeur en paramètre,
@@ -88,10 +91,57 @@ def est_bijective(liste:list) -> bool:
 
     return est_surjective(liste) and est_injective(liste) 
 
-print(
-    est_bijective(
-        histo(
-            [3,0,6,7,4,2,1,5]
-        )
-    )
-)
+# print(
+#     est_bijective(
+#         histo(
+#             [3,0,6,7,4,2,1,5]
+#         )
+#     )
+# )
+
+def afficheHisto(liste:list) -> None:
+    """
+    Procédure d'affichage d'un histogramme dans la console
+
+    Args:
+        liste (list): histogramme sous forme de liste
+    """
+    
+    MARGE_HAUTEUR = 2
+    
+    structure_tableau = ""
+    points_abscice = "---"
+    taille_tableau = len(liste)
+    caractere_colonne = " "
+    valeur_max_liste = val_max(liste)
+
+    print("\nListe : {} \n\n".format(liste))
+    
+    for line in range(valeur_max_liste+MARGE_HAUTEUR):    
+        for col in range(taille_tableau):         
+            if taille_tableau - line + 1 <= liste[col]:
+                caractere_colonne = "*"
+                if col == taille_tableau - 1:
+                    caractere_colonne += " |"
+            else:
+                caractere_colonne = " "   
+                if col == taille_tableau - 1:
+                    caractere_colonne += " |"
+
+            structure_tableau += " | {}".format(caractere_colonne)
+
+            if line == valeur_max_liste + MARGE_HAUTEUR - 1:
+                points_abscice += "{}---".format(col)
+            
+        print(structure_tableau)
+        structure_tableau = ""
+
+    print(points_abscice)
+    
+    cpt = 0
+    for el in liste:
+        plt.bar(cpt,el)
+        cpt+=1
+    plt.show()
+        
+afficheHisto([3,0,6,7,4,2,1,5])
