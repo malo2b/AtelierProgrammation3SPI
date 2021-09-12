@@ -23,8 +23,75 @@ def histo(liste:list) -> list:
         i+=1
     return liste_histo
         
+def est_injective(liste:list) -> bool:
+    """
+    Fonction qui determine si une fonction est injective et retourne un boolen 
+
+    Args:
+        liste (list): liste comprenant les valeurs d'entree
+
+    Returns:
+        bool: True si injective, False sinon
+    """
+    
+    res = True
+    i = 0
+    
+    while i < len(liste) and res:
+        if liste[i] > 1:
+            res = False
+        i += 1
+    return res   
+        
+# print(
+#     est_injective (
+#         histo([3,0,6,7,4,2,1,5])
+#     )
+# )
+
+def est_surjective(liste:list) -> bool:
+    """
+    Fonction qui determine si une fonction est surjective et retourne un boolen 
+
+    Args:
+        liste (list): liste comprenant les valeurs d'entree
+
+    Returns:
+        bool: True si surjective, False sinon
+    """
+
+    res = True
+    i = 0
+    
+    while i < len(liste) and res:
+        if liste[i] < 1:
+            res = False
+        i += 1
+    return res
+
+# print(
+#     est_surjective (
+#         histo([3,0,6,7,4,2,1,5])
+#     )
+# )
+
+def est_bijective(liste:list) -> bool:
+    """
+    Fonction qui determine si une fonction est bijective et retourne un boolen 
+
+    Args:
+        liste (list): liste comprenant les valeurs d'entree
+
+    Returns:
+        bool: True si bijective, False sinon
+    """
+
+    return est_surjective(liste) and est_injective(liste) 
+
 print(
-    histo (
-        [1,1,3,4]
+    est_bijective(
+        histo(
+            [3,0,6,7,4,2,1,5]
+        )
     )
 )
