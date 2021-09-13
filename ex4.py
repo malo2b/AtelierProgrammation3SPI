@@ -1,4 +1,4 @@
-"""System module."""
+"""Modules"""
 import matplotlib.pyplot as plt
 from ex1 import val_max
 
