@@ -144,8 +144,9 @@ def afficheHisto(liste:list) -> None:
         cpt+=1
     plt.show()
         
+# afficheHisto([3,0,6,7,4,2,1,5])
 afficheHisto(
     histo(
-        [1,1,2,3,4,4,4,4,7,6,5,5,5,7,8,9,9,9,6,5,4]
+        [0,0,0,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,5,5,6,7,7,7,7,7]
     )
 )
