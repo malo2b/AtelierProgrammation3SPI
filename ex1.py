@@ -33,10 +33,8 @@ def moyenne(L:list) -> float:
     """
     Retourne la moyenne des valeurs de la liste passée en paramètre
     """
-    if L is not None:
+    if L != []:
         return somme_in_range(L) / len(L)
-
-print(moyenne(None))
 
 def nb_sup(L:list,e:int) -> list:
     """
