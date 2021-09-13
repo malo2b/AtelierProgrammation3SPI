@@ -1,5 +1,3 @@
-
-
 def position(liste:list,element:int) -> int:
     """Fonction qui renvoie l'index d'un élément dans une liste
 
