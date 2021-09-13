@@ -40,11 +40,13 @@ def est_triee(liste:list) -> bool:
     """
     listeEstTriee = True
     i = 1
-
-    while i < len(liste) and listeEstTriee:
-        if liste[i-1] > liste[i]:
-            listeEstTriee = False
-        i+=1
+    if liste == []:
+        listeEstTriee = False
+    else:
+        while i < len(liste) and listeEstTriee:
+            if liste[i-1] > liste[i]:
+                listeEstTriee = False
+            i+=1
     return listeEstTriee
 
 def position_tri(lst:list,element:int)->int:

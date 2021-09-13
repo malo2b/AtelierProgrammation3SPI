@@ -17,13 +17,18 @@ def histo(liste:list) -> list:
     liste_histo = []
     i = 0
 
-    while i < max(liste):
-        cptQuantite = 0
-        for el in liste:
-            if (el == i):
-                cptQuantite+=1
-        liste_histo.append(cptQuantite)
-        i+=1
+    for i in range(max(liste)):
+        liste_histo.append(0)
+    for el in liste:
+        liste_histo[i] += 1
+
+    # while i < max(liste):
+    #     cptQuantite = 0
+    #     for el in liste:
+    #         if (el == i):
+    #             cptQuantite+=1
+    #     liste_histo.append(cptQuantite)
+    #     i+=1
     return liste_histo
 
 def est_injective(liste:list) -> bool:
