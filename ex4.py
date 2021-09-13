@@ -17,18 +17,11 @@ def histo(liste:list) -> list:
     liste_histo = []
     i = 0
 
-    for i in range(max(liste)):
+    for i in range(max(liste)+1):
         liste_histo.append(0)
     for el in liste:
-        liste_histo[i] += 1
+        liste_histo[el] += 1
 
-    # while i < max(liste):
-    #     cptQuantite = 0
-    #     for el in liste:
-    #         if (el == i):
-    #             cptQuantite+=1
-    #     liste_histo.append(cptQuantite)
-    #     i+=1
     return liste_histo
 
 def est_injective(liste:list) -> bool:
@@ -124,7 +117,7 @@ def afficheHisto(liste:list) -> None:
 
     for line in range(valeur_max_liste+MARGE_HAUTEUR):  # affichage lignes
         for col in range(taille_tableau):      # creation lignes
-            if taille_tableau - line + MARGE_HAUTEUR <= liste[col]: # Si un point doit etre mis
+            if taille_tableau - line + 1 <= liste[col]: # Si un point doit etre mis
                 caractere_colonne = "*"
                 if col == taille_tableau - 1:
                     caractere_colonne += " |"
