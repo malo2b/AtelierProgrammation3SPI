@@ -117,9 +117,9 @@ def afficheHisto(liste:list) -> None:
 
     print("\nListe : {} \n\n".format(liste))
     
-    for line in range(valeur_max_liste+MARGE_HAUTEUR):    
-        for col in range(taille_tableau):         
-            if taille_tableau - line + 1 <= liste[col]:
+    for line in range(valeur_max_liste+MARGE_HAUTEUR):  # affichage lignes  
+        for col in range(taille_tableau):      # creation lignes
+            if taille_tableau - line + 1 <= liste[col]: # Si un point doit etre mis
                 caractere_colonne = "*"
                 if col == taille_tableau - 1:
                     caractere_colonne += " |"
@@ -130,7 +130,7 @@ def afficheHisto(liste:list) -> None:
 
             structure_tableau += " | {}".format(caractere_colonne)
 
-            if line == valeur_max_liste + MARGE_HAUTEUR - 1:
+            if line == valeur_max_liste + MARGE_HAUTEUR - 1: # Affichage abscices
                 points_abscice += "{}---".format(col)
             
         print(structure_tableau)
@@ -144,4 +144,8 @@ def afficheHisto(liste:list) -> None:
         cpt+=1
     plt.show()
         
-afficheHisto([3,0,6,7,4,2,1,5])
+afficheHisto(
+    histo(
+        [1,1,2,3,4,4,4,4,7,6,5,5,5,7,8,9,9,9,6,5,4]
+    )
+)
