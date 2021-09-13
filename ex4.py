@@ -107,27 +107,30 @@ def affiche_histo(liste:list) -> None:
 
     structure_tableau = ""
     points_abscice = "---"
-    taille_tableau = len(liste)
-    caractere_colonne = " "
+    taille_liste = len(liste)
+    caractere_liste = " "
     valeur_max_liste = val_max(liste)
 
     print("\nListe : {} \n\n".format(liste))
 
-    for line in range(valeur_max_liste+2):  # affichage lignes
-        for col in range(taille_tableau):      # creation lignes
-            if taille_tableau - line + 1 <= liste[col]: # Si un point doit etre mis
+    for line in range(valeur_max_liste+2,0,-1):  # affichage lignes
+        for col in range(taille_liste):      # creation lignes
+            if line <= liste[col]: # Si un point doit etre mis
                 caractere_colonne = "*"
-                if col == taille_tableau - 1:
+                if col == taille_liste - 1: # Si derniere colonne
                     caractere_colonne += " |"
             else:
                 caractere_colonne = " "
-                if col == taille_tableau - 1:
+                if col == taille_liste - 1: # Si derniere colonne
                     caractere_colonne += " |"
 
             structure_tableau += " | {}".format(caractere_colonne)
 
             if line == valeur_max_liste + 1: # Affichage abscices
-                points_abscice += "{}---".format(col)
+                if col < 10:
+                    points_abscice += "{}---".format(col)
+                else:
+                    points_abscice += "{}--".format(col)
 
         print(structure_tableau)
         structure_tableau = ""
@@ -142,6 +145,6 @@ def affiche_histo(liste:list) -> None:
 
 affiche_histo(
     histo(
-        [0,0,0,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,5,5,6,7,7,7,7,7]
+        [0,0,0,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,5,5,6,7,7,7,7,7,8,9,9,9,10,10,12,12,12]
     )
 )
