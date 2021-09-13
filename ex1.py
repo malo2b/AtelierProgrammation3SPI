@@ -18,23 +18,23 @@ def somme_in_list(L:list) -> float:
     for element in L:
         somme = element + somme
     return somme
-    
+
 def somme_while(L:list) -> float:
     """
     Retourne la somme des valeurs de la liste passée en paramètre
-    """ 
+    """
     somme = 0
     i = 0
     while i < len(L):
         somme = somme + L[i]
         i +=1
-        
+
 def moyenne(L:list) -> float:
     """
     Retourne la moyenne des valeurs de la liste passée en paramètre
     """
     return somme_in_range(L) / len(L)
-       
+
 def nb_sup(L:list,e:int) -> list:
     """
     Retourne une liste comprenant toutes les valeurs de la liste passée
@@ -45,7 +45,7 @@ def nb_sup(L:list,e:int) -> list:
         if element > e:
             res.append(element)
     return res
-        
+
 def moy_sup(L:list,e:int) -> float:
     """
     Retourne la moyenne des valeurs de la liste passée
@@ -59,7 +59,7 @@ def moy_sup(L:list,e:int) -> float:
             somme = somme + element
         res = somme / len(list_sup)
     return res
-        
+
 def val_max(L:list) -> object:
     """
     Retourne la valeur maximale d'une liste passée en paramètres
@@ -72,40 +72,40 @@ def val_max(L:list) -> object:
 
 def ind_max(L):
     return L.index(val_max(L))
-    
+
 # def test():
 #     """
 #     fonction de test
-#     """  
-    
-#     # Moyenne 
-    
+#     """
+
+#     # Moyenne
+
 #     liste = []
 #     for i in random.randint(3,8):
 #         liste.append(random.randint(1,800))
 #     if (moyenne(liste) == statistics.mean(liste)):
 #         print("Test Reussit !")
-        
-        
+
+
 #     # nb_sup
-    
+
 #     liste = []
 #     superieur = random.randint(3,100)
 #     for i in random.randint(3,8):
 #         randomnbr = random.randint(1,800)
-#         if 
+#         if
 #         liste.append()
 #     if (nb_sup(liste) == max(liste)):
 #         print("Test Reussit !")
 
-    
+
 #     # moy_sup
-    
+
 #     # val_max
-    
+
 #     # ind_max
 
-        
-    
-        
+
+
+
 # test()

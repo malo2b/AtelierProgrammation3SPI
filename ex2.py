@@ -1,7 +1,7 @@
 
 
 def position(liste:list,element:int) -> int:
-    """Fonction qui renvoie l'index d'un élément dans une liste 
+    """Fonction qui renvoie l'index d'un élément dans une liste
 
     Args:
         liste (list): Liste dans laquelle sera fait la recherche
@@ -38,13 +38,13 @@ def est_triee(liste:list) -> bool:
     """
     listeEstTriee = True
     i = 1
-    
+
     while i < len(liste) and listeEstTriee:
         if liste[i-1] > liste[i]:
             listeEstTriee = False
         i+=1
     return listeEstTriee
-    
+
 def position_tri(lst:list,element:int)->int:
     """ fonction permettant de chercher un nombre element sur une liste triée
 
@@ -57,9 +57,9 @@ def position_tri(lst:list,element:int)->int:
     """
     debut =0
     fin = len(lst)-1
-    trouve = False 
+    trouve = False
     index = 0
-    
+
     if(est_triee(lst)):
         while(not trouve and debut<=fin):
             index = int((debut+fin)/2)
@@ -70,10 +70,10 @@ def position_tri(lst:list,element:int)->int:
             else:
                 fin = index-1
     if(not trouve):
-        return -1        
+        return -1
     return index
-    
-    
+
+
 def a_repetitions(liste:list) -> bool:
     """Indique si il y a répétition dans la liste
 

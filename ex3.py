@@ -9,10 +9,10 @@ def separer(liste:list) -> list:
     Returns:
         list: liste triée
     """
-    
+
     liste_triee = []
     nbr_element_negatifs = 0
-    
+
     for el in liste:
         if el < 0:
             liste_triee.insert(0,el)
@@ -21,7 +21,7 @@ def separer(liste:list) -> list:
             liste_triee.append(el)
         else:
             liste_triee.insert(nbr_element_negatifs,0)
-    
+
     return liste_triee
 
 print(
