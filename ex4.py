@@ -1,5 +1,6 @@
-from ex1 import val_max
+"""System module."""
 import matplotlib.pyplot as plt
+from ex1 import val_max
 
 def histo(liste:list) -> list:
     """
@@ -15,12 +16,11 @@ def histo(liste:list) -> list:
     """
 
     liste_histo = []
-    i = 0
 
-    for i in range(max(liste)+1):
+    for _ in range(max(liste)+1):
         liste_histo.append(0)
-    for el in liste:
-        liste_histo[el] += 1
+    for element in liste:
+        liste_histo[element] += 1
 
     return liste_histo
 
@@ -97,15 +97,13 @@ def est_bijective(liste:list) -> bool:
 #     )
 # )
 
-def afficheHisto(liste:list) -> None:
+def affiche_histo(liste:list) -> None:
     """
     Procédure d'affichage d'un histogramme dans la console
 
     Args:
         liste (list): histogramme sous forme de liste
     """
-
-    MARGE_HAUTEUR = 2
 
     structure_tableau = ""
     points_abscice = "---"
@@ -115,7 +113,7 @@ def afficheHisto(liste:list) -> None:
 
     print("\nListe : {} \n\n".format(liste))
 
-    for line in range(valeur_max_liste+MARGE_HAUTEUR):  # affichage lignes
+    for line in range(valeur_max_liste+2):  # affichage lignes
         for col in range(taille_tableau):      # creation lignes
             if taille_tableau - line + 1 <= liste[col]: # Si un point doit etre mis
                 caractere_colonne = "*"
@@ -128,7 +126,7 @@ def afficheHisto(liste:list) -> None:
 
             structure_tableau += " | {}".format(caractere_colonne)
 
-            if line == valeur_max_liste + MARGE_HAUTEUR - 1: # Affichage abscices
+            if line == valeur_max_liste + 1: # Affichage abscices
                 points_abscice += "{}---".format(col)
 
         print(structure_tableau)
@@ -137,13 +135,12 @@ def afficheHisto(liste:list) -> None:
     print(points_abscice)
 
     cpt = 0
-    for el in liste:
-        plt.bar(cpt,el)
+    for element in liste:
+        plt.bar(cpt,element)
         cpt+=1
     plt.show()
 
-# afficheHisto([3,0,6,7,4,2,1,5])
-afficheHisto(
+affiche_histo(
     histo(
         [0,0,0,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,5,5,6,7,7,7,7,7]
     )
