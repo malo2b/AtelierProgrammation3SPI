@@ -8,19 +8,23 @@ def position(liste:list,element:int) -> int:
     Returns:
         int: index de l'élement ou -1 si pas présent
     """
+    len_liste = len(liste)
     res = -1
-    if len(liste) > 0:
-        i = -1
-        for el in liste:
-            if el == element:
-                res = element
-            i+=1
-    return i
+
+    if len_liste > 0:
+        i = 0
+        while i < len_liste and res == -1:
+            if liste[i] == element:
+                res = i
+            i += 1
+    return res
+
+# print(position([1,2,3,4],3))
 
 def nb_occurence(lst:list,element:int) ->int:
-    """Fonction retournant le nombre d'occurence element  dans la liste lst """
+    """Fonction retournant le nombre d'occurence element dans la liste lst """
     nombre_occurence = 0
-    for index,value in enumerate(lst):
+    for value in enumerate(lst):
         if(value==element):
             nombre_occurence +=1
     return nombre_occurence

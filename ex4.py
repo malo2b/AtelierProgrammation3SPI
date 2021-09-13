@@ -119,7 +119,7 @@ def afficheHisto(liste:list) -> None:
 
     for line in range(valeur_max_liste+MARGE_HAUTEUR):  # affichage lignes
         for col in range(taille_tableau):      # creation lignes
-            if taille_tableau - line + 1 <= liste[col]: # Si un point doit etre mis
+            if taille_tableau - line + MARGE_HAUTEUR <= liste[col]: # Si un point doit etre mis
                 caractere_colonne = "*"
                 if col == taille_tableau - 1:
                     caractere_colonne += " |"
