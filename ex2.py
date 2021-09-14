@@ -40,9 +40,9 @@ def est_triee(liste:list) -> bool:
     """
     listeEstTriee = True
     i = 1
-    if liste == []:
+    if len(liste) < 0:
         listeEstTriee = False
-    else:
+    elif liste != [] and len(liste) > 1:
         while i < len(liste) and listeEstTriee:
             if liste[i-1] > liste[i]:
                 listeEstTriee = False
