@@ -108,7 +108,6 @@ def affiche_histo(liste:list) -> None:
     structure_tableau = ""
     points_abscice = "---"
     taille_liste = len(liste)
-    caractere_liste = " "
     valeur_max_liste = val_max(liste)
 
     print("\nListe : {} \n\n".format(liste))
